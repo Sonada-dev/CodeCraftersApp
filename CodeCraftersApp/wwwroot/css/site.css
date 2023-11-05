@@ -1,0 +1,188 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+td {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    max-width: 20rem;
+}
+
+
+
+/*#region General */
+
+header {
+    position: fixed;
+    width: 100%;
+    transition: transform 0.5s ease-in-out; /* Изменили время анимации на 0.5 секунды */
+    transform: translateY(0);
+}
+
+    header.hidden {
+        transform: translateY(-100%);
+    }
+
+body {
+    margin-bottom: 60px;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.div-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: black;
+    color: lightgray;
+}
+
+.div-center-courses {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    background-color: black;
+    color: lightgray;
+}
+
+.a-btn {
+    display: block;
+    margin-top: 20px;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    background-color: purple;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+}
+    .a-btn:hover {
+        background-color: darkmagenta;
+        color: white;
+    }
+    .a-btn:active {
+        background-color: darkviolet;
+        color: white;
+    }
+
+/*#endregion */
+
+/*#region HomePage */
+
+
+/*#region HomeDiv */
+
+/*#region btnDetail */
+#btnDetail {
+    margin-top: 20px;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    background-color: purple;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+    #btnDetail:hover {
+        background-color: darkmagenta;
+    }
+
+    #btnDetail:active {
+        background-color: darkviolet;
+    }
+
+/*#endregion */
+
+/*#endregion */
+
+/*#region HomeCoursesDiv */
+
+.popular_courses {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+}
+
+.popular_course-item {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+    .popular_course-item > * {
+        margin: 10px;
+    }
+
+.div-course_overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.div-course_overlay:hover .img-div > img { /* не работает */
+    filter: brightness(70%);
+}
+
+.img-div {
+    position: relative;
+}
+
+    .img-div:hover .div-course_overlay {
+        opacity: 1; /* Показываем overlay при наведении */
+    }
+
+
+    .img-div > img {
+        transition: filter 0.3s ease;
+        height: 300px;
+        background-color: transparent;
+    }
+
+    .img-div > img:hover {
+        filter: brightness(70%); /* Затемняем изображение при наведении */
+    }
+
+/*#endregion */
+
+/*#endregion */

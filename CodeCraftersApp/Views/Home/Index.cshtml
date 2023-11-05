@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Course>
+@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="div-center">
+    <h1>CodeCrafters</h1>
+    <h6>Стартуй в мир кода с нами!</h6>
+    <button id="btnDetail" onclick="scrollToBlock()">Подробнее</button>
+</div>
+<script src="~/js/site.js"></script>
+<div id="divPopularCourses" class="div-popular_courses">
+    <ul class="popular_courses">
+        @if (Model is not null){
+            @foreach (var item in Model)
+            {
+                <li class="popular_course-item">
+                    <div class="img-div">
+                        <img src="@item.Image" alt="Заглушка">
+                        <div class="div-course_overlay">
+                            <a asp-controller="Applications" asp-action="Create" asp-route-id="@item.Id" class="a-btn">Записаться</a>
+                        </div>
+                    </div>
+                    <p>@item.ShortDescription</p>
+                </li>
+            }
+        }
+        else
+        {
+            <li class="popular_course-item">
+                <p>Пока нам нечего вам предложить :(</p>
+            </li>
+        }
+    </ul>
+</div>
+
