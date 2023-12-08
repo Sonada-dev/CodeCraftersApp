@@ -44,8 +44,11 @@ namespace CodeCraftersApp.Controllers
         }
 
         // GET: Applications/Create
-        public IActionResult Create()
+        public IActionResult Create(int? id)
         {
+
+            ViewData["CourseId"] = id;
+
             return View();
         }
 

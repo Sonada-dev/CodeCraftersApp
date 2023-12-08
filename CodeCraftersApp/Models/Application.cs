@@ -27,7 +27,7 @@ namespace CodeCraftersApp.Models
         public int CourseId { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime RegistrationDate { get; set; }
+        public DateTime RegistrationDate { get; set; } = DateTime.Now;
 
     }
 }

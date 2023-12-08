@@ -17,7 +17,7 @@ namespace CodeCraftersApp.Models
         [Display(Name = "Изображение")]
         public string? Image { get; set; }
         [Required]
-        [Display(Name = "Срок обучения")]
+        [Display(Name = "Срок обучения (в месяцах)")]
         public int Duration { get; set; }
     }
 }

@@ -1,14 +1,12 @@
 ﻿@model CodeCraftersApp.Models.Application
-
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Запись на курс";
 }
 
-<h1>Create</h1>
+<h1 style="margin-top: 100px" class="text-center">Записаться на курс</h1>
 
-<h4>Application</h4>
 <hr />
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -32,25 +30,13 @@
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+            <input type="hidden" asp-for="CourseId" value="@ViewData["CourseId"]" />
+            <input asp-for="RegistrationDate" class="form-control"  />
             <div class="form-group">
-                <label asp-for="CourseId" class="control-label"></label>
-                <input asp-for="CourseId" class="form-control" />
-                <span asp-validation-for="CourseId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RegistrationDate" class="control-label"></label>
-                <input asp-for="RegistrationDate" class="form-control" />
-                <span asp-validation-for="RegistrationDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Записаться" class="a-btn" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
